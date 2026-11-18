@@ -16,6 +16,14 @@ Do not let good code excuse incorrect product behavior, or correct behavior excu
 
 ## Process
 
+### 0. Confirm the review checkout
+
+Before evaluating the diff, identify the exact revision under review:
+
+- Confirm the repository and worktree path, branch, `HEAD` SHA, and `git status` (or the equivalent revision and working-tree state when reviewing remotely).
+- Compare the inspected revision with the intended PR head SHA. If they differ, report the mismatch and inspect the intended PR revision before assessing requirements or code quality; do not silently review another checkout or stale revision.
+- Keep this preflight limited to identifying the checkout and revision. Use `github-flow` for the broader Git and PR workflow.
+
 ### 1. Gather context
 
 Read:

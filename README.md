@@ -464,6 +464,18 @@ Path: `templates/DECISION.md`
 
 Lightweight record for important durable decisions and their rationale.
 
+## `AGENT_TASK` (testing)
+
+Path: `templates/AGENT_TASK.md`
+
+Optional, model-agnostic prompt structure for handing one implementation, investigation, or review task to a coding agent. Fill only the parts that clarify the outcome, relevant sources, material boundaries, and how to tell when it is done. It is a task artifact, not an execution workflow.
+
+Usability walkthroughs against two concrete Cappy Hub task scenarios suggest where fields earn their space: a [Task assignment pagination fix](https://github.com/ehuerta6/cappy-hub/issues/456) needs a clear outcome and focused regression checks, while a [contextual-creation audit](https://github.com/ehuerta6/cappy-hub/issues/420) benefits from source links, scope boundaries, evidence to gather, and an unresolved-questions report. For the fix, a few untemplated lines could be enough; these walkthroughs are not performance evaluations or claims that the template was used on those tasks.
+
+In a software-engineering ChatGPT Project, you can manually attach a copy of this file as a Project Source and tailor [the software engineering Project Instructions](project-instructions/software-engineering-project.md). The repository file stays canonical: an attached copy does not sync automatically, and Codex does not automatically read ChatGPT Project Sources. ChatGPT can use the source to draft the prompt that is then handed to the coding agent. If the source is unavailable, write the task using the project context at hand.
+
+In a typical handoff, ChatGPT drafts the scoped prompt, the coding agent returns its changes and reports which checks it ran, and ChatGPT inspects the diff and check results when repository access is available and material. Keep reported claims distinct from independently checked evidence; the user decides product questions and whether to accept or merge the work.
+
 # Project instructions
 
 Reusable presets for long-running ChatGPT Projects or other AI workspaces with multiple chats.
