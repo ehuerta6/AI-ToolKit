@@ -427,6 +427,8 @@ Templates provide lightweight structure for common engineering artifacts.
 
 They are starting points, not mandatory formats.
 
+GitHub automatically loads the description-first Issue and Pull Request templates in [`.github/`](.github/). Keep those copies aligned with the reusable `ISSUE.md` and `PULL_REQUEST.md` files below; the GitHub files prefill repository bodies, while the files in `templates/` remain portable starting points.
+
 ## `SPEC`
 
 Path: `templates/SPEC.md`

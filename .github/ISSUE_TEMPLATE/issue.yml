@@ -1,0 +1,34 @@
+name: Issue
+description: Propose a focused change with a clear goal and acceptance criteria.
+title: ""
+labels: []
+assignees: []
+body:
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      description: In a few natural sentences, explain what should change, why it matters, and the intended result. Describe the need without prescribing an implementation.
+      placeholder: Explain the need and intended result.
+    validations:
+      required: true
+  - type: textarea
+    id: acceptance_criteria
+    attributes:
+      label: Acceptance criteria
+      description: List observable results that will show this issue is complete.
+      placeholder: |
+        - [ ] <observable criterion>
+        - [ ] <observable criterion>
+    validations:
+      required: true
+  - type: textarea
+    id: parent
+    attributes:
+      label: Parent or related context (optional)
+      description: Link a parent spec, issue, or other relevant context.
+  - type: textarea
+    id: notes
+    attributes:
+      label: Constraints or notes (optional)
+      description: Include only decisions or constraints needed to preserve the approved scope.
