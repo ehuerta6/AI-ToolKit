@@ -92,6 +92,13 @@ Verify that the diff contains:
 - no unexplained dependency additions;
 - tests when behavior changed.
 
+For a change that removes, renames, or relocates canonical documentation:
+
+- Search the repository for links and references to the old path, name, or affected identifier.
+- When GitHub access is available, search open Issues and PRs in the repository for still-relevant references. Limit the search to affected paths, names, and terms; local search does not cover live tracker content.
+- Update live references only when the task authorizes those edits and they fit its scope. Otherwise, report the affected links and where they need follow-up.
+- If tracker access is unavailable, state that the open Issues and PRs were not checked; do not treat the local search as a complete reference check.
+
 For documentation changes, check behavior and deployment claims against current code and accepted decisions. Distinguish dated deployment observations from current state, and validate relevant internal links and anchors when practical.
 
 ### 7. Report evidence
