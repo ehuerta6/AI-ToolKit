@@ -1,4 +1,4 @@
-# AI Setup
+# AI Toolkit
 
 This repository is the canonical source for reusable AI-assisted software engineering configuration, with selected workflows for research, writing, learning, and long-running AI workspaces.
 
@@ -35,7 +35,7 @@ Load only the configuration relevant to the current task.
 
 ## Skills-first delivery
 
-Maintain `ai-setup` as the canonical vault for rules, agents, templates, project instructions and skills. When a reusable improvement belongs to an existing repeatable workflow, prioritize updating its installable skill. Make the relevant skill self-contained enough to work after selective global installation without access to the rest of this repository. Embed only a concise task-relevant subset of canonical rules and boundaries; do not duplicate entire artifacts or erase their original ownership. Preserve the separate roles of agents, rules, templates and project instructions.
+Maintain AI Toolkit as the canonical vault for rules, agents, templates, project instructions and skills. When a reusable improvement belongs to an existing repeatable workflow, prioritize updating its installable skill. Make the relevant skill self-contained enough to work after selective global installation without access to the rest of this repository. Embed only a concise task-relevant subset of canonical rules and boundaries; do not duplicate entire artifacts or erase their original ownership. Preserve the separate roles of agents, rules, templates and project instructions.
 
 The `npx skills` CLI distributes skill copies, not arbitrary rules, Codex agent definitions or Project Instructions. Never claim otherwise.
 
@@ -53,6 +53,6 @@ Do not treat catalog presence as evidence that a workflow is accepted or adopted
 
 ## This repository
 
-`ai-setup` is a personal configuration repository and currently permits direct work on `main`.
+AI Toolkit is a personal configuration repository and currently permits direct work on `main`.
 
 Do not apply that exception to other repositories unless they explicitly say so.

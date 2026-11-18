@@ -65,7 +65,7 @@ Use when setting up a long-running workspace with multiple related chats. This i
 5. Remove generic preset instructions that do not apply. Avoid repeating context already present in project files or another authoritative instruction.
 6. Add only project-specific customization needed to resolve actual requirements or constraints. Keep project-specific behavior authoritative over reusable defaults.
 7. Return concise final Project Instructions, the chosen preset, the sources used, and any unresolved questions.
-8. Keep the complete, paste-ready Project Instructions at **8,000 characters or fewer** as an `ai-setup` portability constraint, or below a smaller limit stated by the target platform. Count exactly the text for the Project Instructions field, including headings, Markdown, whitespace, and line breaks; exclude separate commentary or source links that will not be pasted. If it exceeds the limit, remove redundant or generic guidance and reference material first while preserving project-specific authority, source precedence, important constraints, and confirmed decisions. Check the final count before delivery, and report a verified count only if you actually counted it. Apply this to any of the seven presets in `project-instructions/`.
+8. Keep the complete, paste-ready Project Instructions at **8,000 characters or fewer** as an AI Toolkit portability constraint, or below a smaller limit stated by the target platform. Count exactly the text for the Project Instructions field, including headings, Markdown, whitespace, and line breaks; exclude separate commentary or source links that will not be pasted. If it exceeds the limit, remove redundant or generic guidance and reference material first while preserving project-specific authority, source precedence, important constraints, and confirmed decisions. Check the final count before delivery, and report a verified count only if you actually counted it. Apply this to the available presets in `project-instructions/`.
 
 For a worked compression example, see [Project Instructions character cap](references/project-instructions-cap-example.md).
 
@@ -81,10 +81,10 @@ Choose:
 
 ## Skills-first distribution
 
-`ai-setup` remains the canonical vault for reusable skills, agents, rules, templates, and project instructions. Prefer updating a **relevant installable skill** when knowledge from another artifact should change how agents perform a task.
+AI Toolkit remains the canonical vault for reusable skills, agents, rules, templates, and project instructions. Prefer updating a **relevant installable skill** when knowledge from another artifact should change how agents perform a task.
 
 - Keep canonical rules, templates, and agents in their own files; do not delete or reclassify them for CLI convenience.
-- Embed only the essential, task-relevant constraints, precedence, safety boundaries, and completion criteria into the corresponding skill so a globally installed copy can operate without a checkout of `ai-setup`.
+- Embed only the essential, task-relevant constraints, precedence, safety boundaries, and completion criteria into the corresponding skill so a globally installed copy can operate without a checkout of this repository.
 - Treat a skill as standalone: test the instruction path when sibling skills, rules, agents, or templates are inaccessible; provide a fallback or state the dependency honestly.
 - Preserve project-specific context in its own repository. Do not transfer secrets, credentials, or domain decisions into global skills.
 - Prefer extending an existing skill to creating another skill with an overlapping trigger. Create a new skill only for a distinct repeatable workflow.

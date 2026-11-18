@@ -67,7 +67,17 @@ Do not bundle cleanup or refactors that are not required.
 
 ### 4. Implement incrementally
 
-Make focused edits.
+Make focused edits. For large, risky, uncertain, or hard-to-review changes,
+work through a few coherent increments that can each be inspected and checked.
+After each meaningful increment, run its focused check and inspect the product
+and test diffs together before continuing; make a demonstrable end-to-end slice
+available early when practical. Confirm that a passing result reflects the
+intended behavior rather than weakened, deleted, skipped, or rewritten test
+assertions. Legitimate test changes must match the approved behavior. During
+autonomous work, perform these checkpoints internally and summarize meaningful
+evidence; during interactive pairing, invite direction at useful checkpoints
+without requiring approval for every edit. Skip extra checkpoints for small,
+straightforward changes.
 
 When behavior changes:
 

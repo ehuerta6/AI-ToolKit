@@ -1,6 +1,6 @@
 # Optional Gemini workflows
 
-These recipes route work to Google products when their strengths fit, then return to canonical `ai-setup` skills for evaluation. They are optional and do not create new repository workflows.
+These recipes route work to Google products when their strengths fit, then return to canonical AI Toolkit skills for evaluation. They are optional and do not create new repository workflows.
 
 Product references and availability were checked against the [official Google source links](README.md#source-currency) on **October 10, 2026**. Re-check changing access, quotas, and privacy terms before use.
 

@@ -35,17 +35,17 @@ Antigravity reads skill metadata for discovery and loads the full instructions w
 
 ## Adopt selected canonical skills
 
-Use `ai-config-builder` in its **Adopt** mode to inspect the target project's instructions, classify relevant artifacts, and select only what fits. `adopt` is a skill mode, not a shell command. Keep canonical copies in this `ai-setup` repository; adoption means deliberately copying selected files into the consuming project, where project-specific instructions can take precedence.
+Use `ai-config-builder` in its **Adopt** mode to inspect the target project's instructions, classify relevant artifacts, and select only what fits. `adopt` is a skill mode, not a shell command. Keep canonical copies in this AI Toolkit repository; adoption means deliberately copying selected files into the consuming project, where project-specific instructions can take precedence.
 
 For example, after choosing `research-and-compare` and `review-pr`, create a workspace skill directory and copy just those skill folders:
 
 ```sh
 mkdir -p /path/to/project/.agents/skills
-cp -R /path/to/ai-setup/skills/research-and-compare /path/to/project/.agents/skills/
-cp -R /path/to/ai-setup/skills/review-pr /path/to/project/.agents/skills/
+cp -R /path/to/AI-ToolKit/skills/research-and-compare /path/to/project/.agents/skills/
+cp -R /path/to/AI-ToolKit/skills/review-pr /path/to/project/.agents/skills/
 ```
 
-Replace both paths with real local paths. Read the target project's instructions first, review the copied material, and keep changes project-specific. If you need global discovery instead, copy selected folders to the surface-specific path above: `~/.gemini/config/skills/` for Antigravity 2.0 or IDE, or `~/.gemini/antigravity-cli/skills/` for CLI. Global skills are available across workspaces on that machine. Do not copy all of `ai-setup` by default.
+Replace both paths with real local paths. Read the target project's instructions first, review the copied material, and keep changes project-specific. If you need global discovery instead, copy selected folders to the surface-specific path above: `~/.gemini/config/skills/` for Antigravity 2.0 or IDE, or `~/.gemini/antigravity-cli/skills/` for CLI. Global skills are available across workspaces on that machine. Do not copy all of AI Toolkit by default.
 
 Do not create a `GEMINI.md` that simply duplicates `AGENTS.md`. Antigravity documents both names; add a focused adapter only when a real, reproducible incompatibility requires one. Do not move canonical files into this `gemini/` directory.
 

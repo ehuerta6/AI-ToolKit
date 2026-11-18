@@ -1,15 +1,51 @@
 #!/usr/bin/env python3
-"""Lightweight consistency checks for the ai-setup catalog."""
+"""Lightweight consistency checks for the AI Toolkit catalog."""
 
 from pathlib import Path
 import re
 import sys
+from urllib.parse import unquote, urlsplit
 
 ROOT = Path(__file__).resolve().parent.parent
 
 
 def fail(errors: list[str], message: str) -> None:
     errors.append(message)
+
+
+def check_local_markdown_links(
+    doc: Path, content: str, errors: list[str], root: Path
+) -> None:
+    """Catch broken relative Markdown links while ignoring fenced code examples."""
+    content = re.sub(
+        r"(?ms)^ {0,3}(`{3,}|~{3,})[^\n]*\n.*?^ {0,3}\1[ \t]*$",
+        "",
+        content,
+    )
+    content = re.sub(r"(?<!`)`+[^`\n]*`+(?!`)", "", content)
+    doc = doc.resolve()
+    patterns = (
+        re.compile(r"!?\[[^\]]*\]\(\s*(?:<([^>]+)>|([^\s)]+))"),
+        re.compile(r"(?m)^ {0,3}\[[^\]]+\]:\s*(?:<([^>]+)>|([^\s]+))"),
+    )
+    root = root.resolve()
+    for pattern in patterns:
+        for match in pattern.finditer(content):
+            destination = match.group(1) or match.group(2)
+            parsed = urlsplit(destination)
+            if parsed.scheme or parsed.netloc or not parsed.path:
+                continue
+            target_name = unquote(parsed.path)
+            if Path(target_name).suffix.lower() not in {".md", ".markdown"}:
+                continue
+            target = (doc.parent / target_name).resolve()
+            if not target.is_relative_to(root):
+                fail(
+                    errors,
+                    f"{doc.relative_to(root)} links outside the repository: '{destination}'",
+                )
+            elif not target.is_file():
+                fail(errors, f"{doc.relative_to(root)} links to missing Markdown file '{destination}'")
 
 
 def main() -> int:
@@ -44,11 +80,15 @@ def main() -> int:
             fail(errors, f"{path.relative_to(ROOT)} has empty metadata; omit it or provide string key-value fields")
 
     # Catch common repository-relative references in catalog and instruction docs.
-    docs = list(ROOT.glob("*.md")) + list(ROOT.glob("**/*.md"))
-    docs = list(set(docs))
+    docs = sorted(
+        path
+        for path in ROOT.rglob("*.md")
+        if not {".git", "node_modules", "dist"}.intersection(path.parts)
+    )
     path_pattern = re.compile(r"(?<![\w./-])((?:skills|agents|rules|templates|project-instructions|scripts)/[\w./-]+\.(?:md|py))(?![\w.-])")
     for doc in docs:
         text = doc.read_text(encoding="utf-8")
+        check_local_markdown_links(doc, text, errors, ROOT)
         for ref in path_pattern.findall(text):
             if not (ROOT / ref).is_file():
                 fail(errors, f"{doc.relative_to(ROOT)} references missing file '{ref}'")

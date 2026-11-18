@@ -10,6 +10,10 @@ on:
       - "rules/**"
       - "templates/**"
       - "project-instructions/**"
+      - "scripts/**"
+      - "gemini/**"
+      - "knowledge/**"
+      - "AGENTS.md"
       - "README.md"
       - "WORKFLOWS.md"
       - ".github/workflows/deploy-portal.yml"
@@ -21,6 +25,10 @@ on:
       - "rules/**"
       - "templates/**"
       - "project-instructions/**"
+      - "scripts/**"
+      - "gemini/**"
+      - "knowledge/**"
+      - "AGENTS.md"
       - "README.md"
       - "WORKFLOWS.md"
       - ".github/workflows/deploy-portal.yml"
@@ -39,6 +47,8 @@ jobs:
     steps:
       - name: Check out repository
         uses: actions/checkout@v7
+      - name: Validate catalog references
+        run: python3 scripts/validate_catalog.py
       - name: Set up Node.js
         uses: actions/setup-node@v7
         with:
