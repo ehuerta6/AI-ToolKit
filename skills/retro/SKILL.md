@@ -108,6 +108,25 @@ Use:
 
 A retro recommendation is not automatically adopted.
 
+### 5. Route reusable AI Toolkit candidates
+
+After completing the retro, assess whether any finding belongs in the canonical AI Toolkit repository (`ehuerta6/AI-ToolKit`) or only in the project where the work happened.
+
+A candidate belongs in AI Toolkit only when the retro has concrete evidence from actual work that reusable AI Toolkit configuration caused or materially contributed to the friction, and there is a plausible benefit beyond the source project. Project-specific product behavior, architecture, local conventions, and one-off mistakes stay in their project. Identify the reusable artifact or workflow when possible. Keep untested explanations or benefits clearly marked as hypotheses; do not present them as policy.
+
+Before creating an issue, search the canonical repository for a relevant existing issue, including closed issues. Add new evidence to an existing issue when the scope matches instead of creating a duplicate. If one or more distinct candidates qualify and no matching issue covers them, create one focused issue in the canonical repository. Give it a concise description and one section per candidate with:
+
+- source project and task;
+- observed friction and concrete evidence;
+- affected AI Toolkit artifact, if known;
+- proposed change and expected benefit;
+- tradeoffs or uncertainty;
+- testing and adoption status.
+
+Keep the issue concise. Preserve the full retro in its source project; do not copy it into AI Toolkit. Exclude secrets, private data, and unnecessary project details. State that the issue records a proposal and does not authorize implementation, adoption, or promotion from `testing`.
+
+If no candidate meets the evidence and reuse threshold, say so in the retro and create no issue. Never create an empty or speculative issue because a retro completed. If GitHub access, repository identity, or issue creation is unavailable, prepare a concise issue draft and state what prevented creation. Creating an issue is only a proposal; it does not authorize changing or adopting AI Toolkit configuration.
+
 ## Rules
 
 - Evidence before policy.
@@ -127,4 +146,5 @@ A retro is complete when it clearly states:
 - what should change;
 - where the change belongs;
 - what should remain unchanged;
-- which recommendations still require testing.
+- which recommendations still require testing;
+- whether any evidence-backed, reusable AI Toolkit candidate qualified for an issue, and whether that issue was created or an existing issue updated.
