@@ -6,7 +6,7 @@ import tailwindcss from "@tailwindcss/vite";
 const repositoryRoot = fileURLToPath(new URL("..", import.meta.url));
 
 export default defineConfig({
-  base: "/ai-setup/",
+  base: "/AI-ToolKit/",
   plugins: [react(), tailwindcss()],
   server: {
     fs: { allow: [repositoryRoot] },

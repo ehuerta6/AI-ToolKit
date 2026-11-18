@@ -162,7 +162,9 @@ Prefer environment configuration and the deployment platform's secret mechanism.
 
 ## Debugging
 
-Use `debug-with-evidence`.
+Use `debug-with-evidence` when it is available. Otherwise, reproduce the
+failure, isolate its cause from emulator and application evidence, make the
+smallest fix, and verify the behavior directly.
 
 For Firebase-specific failures inspect:
 
@@ -180,7 +182,9 @@ Do not change rules to `allow read, write: if true` merely to make an error disa
 
 ## Verification
 
-Use `verify-change`.
+Use `verify-change` when it is available. Otherwise, run the relevant project
+checks and directly verify the affected Firebase behavior and authorization
+boundaries; report checks that could not be run.
 
 When applicable verify:
 

@@ -44,7 +44,7 @@ import MermaidDiagram from "./MermaidDiagram";
 
 type View = "overview" | "readme" | "workflows" | CategoryId;
 
-const repository = "https://github.com/ehuerta6/ai-setup";
+const repository = "https://github.com/ehuerta6/AI-ToolKit";
 const ReactMarkdown = lazy(() => import("react-markdown"));
 const categoryIcons = {
   skills: Sparkles,
@@ -141,7 +141,7 @@ function Markdown({
                 /* keep the original href */
               }
               const linkedPath = destination.match(
-                /github\.com\/ehuerta6\/ai-setup\/blob\/main\/(.+?)(?:#.*)?$/,
+                /github\.com\/ehuerta6\/AI-ToolKit\/blob\/main\/(.+?)(?:#.*)?$/i,
               )?.[1];
               const linkedItem =
                 linkedPath &&
@@ -395,19 +395,12 @@ function App() {
         !event.altKey
       ) {
         event.preventDefault();
-        if (!currentCatalogView) setView("skills");
-        window.setTimeout(
-          () =>
-            document
-              .querySelector<HTMLInputElement>("#catalog-search")
-              ?.focus(),
-          0,
-        );
+        focusCatalogSearch();
       }
     }
     window.addEventListener("keydown", handleShortcut);
     return () => window.removeEventListener("keydown", handleShortcut);
-  }, [currentCatalogView, mobileNavOpen]);
+  }, [mobileNavOpen]);
 
   useEffect(() => {
     function restoreGuide(event: PopStateEvent) {
@@ -566,6 +559,17 @@ function App() {
     window.scrollTo({ top: 0, behavior: "smooth" });
   }
 
+  function focusCatalogSearch() {
+    navigate("skills");
+    window.setTimeout(
+      () =>
+        document
+          .querySelector<HTMLInputElement>("#catalog-search")
+          ?.focus(),
+      0,
+    );
+  }
+
   function openGuide(path: "README.md" | "WORKFLOWS.md", hash: string) {
     window.history.replaceState(
       { ...(window.history.state ?? {}), portalView: view },
@@ -675,16 +679,7 @@ function App() {
         </div>
         <button
           className="search-trigger"
-          onClick={() => {
-            navigate("skills");
-            window.setTimeout(
-              () =>
-                document
-                  .querySelector<HTMLInputElement>("#catalog-search")
-                  ?.focus(),
-              0,
-            );
-          }}
+          onClick={focusCatalogSearch}
         >
           <Search size={15} />
           <span>Search catalog</span>
@@ -753,7 +748,7 @@ function App() {
       <main ref={mainContent} id="main-content" className="main-content">
         <div className="topbar">
           <div className="breadcrumbs">
-            <span>ai-setup</span>
+            <span>AI Toolkit</span>
             <ChevronRight size={13} />
             <span>
               {selected ? categoryTitles[selected.category] : pageTitle}
@@ -818,7 +813,7 @@ function Brand({ onClick }: { onClick: () => void }) {
       <span className="brand-mark">
         <Command size={17} strokeWidth={2.5} />
       </span>
-      <span className="brand-name">ai-setup</span>
+      <span className="brand-name">AI Toolkit</span>
     </button>
   );
 }
@@ -885,7 +880,7 @@ function Overview({ onNavigate }: { onNavigate: (view: View) => void }) {
   return (
     <div className="page-wrap overview-page">
       <section className="overview-intro">
-        <p className="eyebrow">AI-SETUP / CANONICAL CONFIGURATION</p>
+        <p className="eyebrow">AI TOOLKIT / CANONICAL CONFIGURATION</p>
         <h1>A field guide to reusable engineering.</h1>
         <p className="intro-description">
           Browse focused workflows, project guidance, and reusable artifacts.

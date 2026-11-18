@@ -1,8 +1,8 @@
 # Gemini ecosystem
 
-Use this page to choose a Google surface for a task. These products have different roles and access models; they do not share one configuration system. Reuse the canonical `ai-setup` skills when a workflow fits. `gemini/` is documentation, not an auto-loaded skill directory.
+Use this page to choose a Google surface for a task. These products have different roles and access models; they do not share one configuration system. Reuse the canonical AI Toolkit skills when a workflow fits. `gemini/` is documentation, not an auto-loaded skill directory.
 
-| Surface | Use it when… | Example | Tradeoff / route back to `ai-setup` |
+| Surface | Use it when… | Example | Tradeoff / route back to AI Toolkit |
 | --- | --- | --- | --- |
 | [Antigravity CLI / IDE / 2.0](ANTIGRAVITY.md) | You want an agent to work in a code repository. | Ask it to implement an issue, inspect the diff, and run project checks. | Review proposed file and terminal actions. Use canonical `implement-issue`, `review-pr`, or `verify-change` guidance. |
 | [Gemini Deep Research](https://support.google.com/gemini/answer/15719111) | You need broad, current web research or source discovery. | Compare current SDK support, then open and retain the original sources. | Reports can take time, have request limits, and are secondary evidence. Continue with [`research-and-compare`](../skills/research-and-compare/SKILL.md). |

@@ -1,6 +1,6 @@
 # Workflows
 
-Scenario-based guide for using `ai-setup`.
+Scenario-based guide for using AI Toolkit.
 
 These routes are suggestions, not a required sequence. Use only the steps that help with the task. For a single reusable workflow, load its skill; for durable multi-chat context, start from a Project Instruction preset.
 
@@ -17,7 +17,7 @@ flowchart TD
   need -->|Start a defined product| product["Product defined, project not started"]
   need -->|Implement an approved issue| implement["One approved issue"]
   need -->|Debug a bug| debug["Bug"]
-  need -->|Adopt AI setup| adoption["Existing project adoption"]
+  need -->|Adopt AI Toolkit| adoption["Existing project adoption"]
   need -->|Review existing setup| maintenance["Existing project maintenance"]
 ```
 
@@ -142,9 +142,9 @@ Use when a project already has AI configuration and it may have drifted.
 - duplication;
 - conflicts;
 - missing reusable configuration;
-- reusable behavior that belongs in ai-setup.
+- reusable behavior that belongs in AI Toolkit.
 
-For installed global Codex skills, inspect them with `npx skills ls -g` and update copies on demand with `npx skills update -g`. GitHub pushes do not synchronize them automatically. Update a local `ai-setup` checkout with Git separately; shared rule references and custom agent TOML files are not updated by the skills CLI. Remove local duplicates only after confirming they do not contain project-specific adaptations.
+For installed global Codex skills, inspect them with `npx skills ls -g` and update copies on demand with `npx skills update -g`. GitHub pushes do not synchronize them automatically. Update a local AI Toolkit checkout with Git separately; shared rule references and custom agent TOML files are not updated by the skills CLI. Remove local duplicates only after confirming they do not contain project-specific adaptations.
 
 
 ## New ChatGPT or Claude Project
@@ -335,7 +335,7 @@ retro
 Use evidence from actual work to decide whether something should:
 
 - stay project-specific;
-- change in ai-setup;
+- change in AI Toolkit;
 - become automated;
 - remain unchanged.
 
@@ -353,7 +353,7 @@ Do not create decision records for trivial choices.
 
 ## Core principle
 
-`ai-setup` preserves canonical rules, templates, project instructions, agents, and skills. Prefer shipping relevant operational guidance through self-contained installable skills, without copying entire artifacts or changing their boundaries. `npx skills` does not install Codex agent TOML files, general rules, or Project Instructions.
+AI Toolkit preserves canonical rules, templates, project instructions, agents, and skills. Prefer shipping relevant operational guidance through self-contained installable skills, without copying entire artifacts or changing their boundaries. `npx skills` does not install Codex agent TOML files, general rules, or Project Instructions.
 
 WORKFLOWS chooses the right tool.
 
