@@ -11,7 +11,6 @@ on:
       - "templates/**"
       - "project-instructions/**"
       - "scripts/**"
-      - "gemini/**"
       - "knowledge/**"
       - "AGENTS.md"
       - "README.md"
