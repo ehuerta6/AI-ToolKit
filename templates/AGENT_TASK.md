@@ -1,6 +1,6 @@
 # Agent task
 
-Use this optional template to hand one scoped task to Codex, Claude Code, Gemini CLI, or another coding agent. Keep only the sections that help with this task; project instructions and existing skills remain authoritative.
+Use this optional template to hand one scoped task to Codex, Claude Code, or another coding agent. Keep only the sections that help with this task; project instructions and existing skills remain authoritative.
 
 ## Task and outcome
 
