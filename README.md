@@ -23,8 +23,6 @@ metadata and local Markdown references. Run `npm run build` from `portal/` to
 create the production site; both checks run in GitHub Actions for catalog and
 portal changes.
 
-For Google Gemini products and Antigravity guidance that routes back to canonical AI Toolkit skills, see [gemini/README.md](gemini/README.md). This is an integration guide, not a second configuration catalog.
-
 Projects can adopt only what they need. Keep product behavior, architecture, and other project-specific decisions in the project repository.
 
 ## Skills-first distribution
