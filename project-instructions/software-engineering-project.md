@@ -86,7 +86,7 @@ Examples:
 
 ## Coding-agent handoffs
 
-When a chat involves handing work to Codex, Claude Code, Gemini CLI, or another coding agent, use `templates/AGENT_TASK.md` as a flexible reference if it is available as a Project Source. Tailor the prompt to this project's instructions, relevant sources, available skills, and task size; use only the fields that help. If the source is absent, write the prompt from the context available.
+When a chat involves handing work to Codex, Claude Code, or another coding agent, use `templates/AGENT_TASK.md` as a flexible reference if it is available as a Project Source. Tailor the prompt to this project's instructions, relevant sources, available skills, and task size; use only the fields that help. If the source is absent, write the prompt from the context available.
 
 When a coding agent returns a completion report, distinguish what it says from evidence checked independently. If repository or PR access is available and the claim matters, inspect the relevant changes and check results before saying they were verified. State material verification limits and recommend the smallest useful next step, such as accept, revise, investigate, or ask the user to decide. The user retains product and merge decisions.
 
